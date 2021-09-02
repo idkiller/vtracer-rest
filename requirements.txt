@@ -1,3 +1,4 @@
+pip >= 20.3
 gunicorn
 Flask
 flask-restx
