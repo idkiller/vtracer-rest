@@ -1,3 +1,4 @@
+use image::io::Reader;
 use std::path::PathBuf;
 use std::{fs::File, io::Write};
 
@@ -15,7 +16,7 @@ pub fn convert_image_to_svg(config: Config) -> Result<String, String> {
     };
     match svg {
         Ok(svg_file) => Ok(svg_file.to_string()),
-        Err(e) => Err(format!("write svg error : {}", e))
+        Err(e) => Err(format!("create svg error : {}", e))
     }
 }
 
@@ -129,7 +130,9 @@ fn binary_image_to_svg(config: ConverterConfig) -> Result<SvgFile, String> {
 }
 
 fn read_image(input_path: PathBuf) -> Result<(ColorImage, usize, usize), String> {
-    let img = image::open(input_path);
+    //let img = image::open(input_path);
+    let img = Reader::open(input_path).map_err(|e| e.to_string())?
+        .with_guessed_format().map_err(|e| e.to_string())?.decode();
     let img = match img {
         Ok(file) => file.to_rgba(),
         Err(_) => return Err(String::from("No image file found at specified input path")),
