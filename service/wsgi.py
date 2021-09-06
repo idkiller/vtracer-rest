@@ -7,8 +7,19 @@ from vlib import convert_to_svg
 from tempfile import mkstemp
 import os
 
+from flask_cors import CORS
+
+
 application = Flask(__name__)
+CORS(application)
+
+@application.after_request
+def set_headers(response):
+    response.headers["Referrer-Policy"] = 'no-referrer'
+    return response
+
 app = Api(app = application)
+
 
 VisionParser = app.parser()
 VisionParser.add_argument('color_mode', default='color')
