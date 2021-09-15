@@ -73,12 +73,14 @@ class ContentsClass(Resource):
         return [
             {
                 'type': 'svg-pattern',
+                'name': 'pattern1',
                 'contents': '''<pattern x="12.5" y="12.5" width="25" height="25" patternUnits="userSpaceOnUse">
                     <circle fill="orange" cx="10" cy="10" r="10" />
                 </pattern>'''
             },
             {
                 'type': 'svg-pattern',
+                'name': 'pattern2',
                 'contents': '''<pattern x="0" y="0" width="112" height="190" patternUnits="userSpaceOnUse" viewBox="56 -254 112 190">
                     <g fill="#fff" stroke="orange" stroke-width="20">
                         <path d="M168-127.1c0.5,0,1,0.1,1.3,0.3l53.4,30.5c0.7,0.4,1.3,1.4,1.3,2.2v61c0,0.8-0.6,1.8-1.3,2.2L169.3-0.3 c-0.7,0.4-1.9,0.4-2.6,0l-53.4-30.5c-0.7-0.4-1.3-1.4-1.3-2.2v-61c0-0.8,0.6-1.8,1.3-2.2l53.4-30.5C167-127,167.5-127.1,168-127.1 L168-127.1z"></path>
@@ -89,6 +91,7 @@ class ContentsClass(Resource):
             },
             {
                 'type': 'svg-pattern',
+                'name': 'pattern3',
                 'contents': '''<pattern x="0" y="126" patternUnits="userSpaceOnUse" width="126" height="200" viewBox="0 0 10 16">
                     <g id="cube">
                         <path fill="orange" d="M0 0l5 3v5l-5 -3z" />
