@@ -20,7 +20,6 @@ def set_headers(response):
 
 app = Api(app = application)
 
-
 VisionParser = app.parser()
 VisionParser.add_argument('color_mode', default='color')
 VisionParser.add_argument('hierarchial', default='stacked')
@@ -65,6 +64,41 @@ class VisionClass(Resource):
         )
         os.unlink(path)
         return Response(svg, mimetype='image/svg+xml')
+
+contents = app.namespace('contents', description='Contents APIs')
+
+@contents.route('/')
+class ContentsClass(Resource):
+    def get(self):
+        return [
+            {
+                'type': 'svg-pattern',
+                'contents': '''<pattern x="12.5" y="12.5" width="25" height="25" patternUnits="userSpaceOnUse">
+                    <circle fill="orange" cx="10" cy="10" r="10" />
+                </pattern>'''
+            },
+            {
+                'type': 'svg-pattern',
+                'contents': '''<pattern x="0" y="0" width="112" height="190" patternUnits="userSpaceOnUse" viewBox="56 -254 112 190">
+                    <g fill="#fff" stroke="orange" stroke-width="20">
+                        <path d="M168-127.1c0.5,0,1,0.1,1.3,0.3l53.4,30.5c0.7,0.4,1.3,1.4,1.3,2.2v61c0,0.8-0.6,1.8-1.3,2.2L169.3-0.3 c-0.7,0.4-1.9,0.4-2.6,0l-53.4-30.5c-0.7-0.4-1.3-1.4-1.3-2.2v-61c0-0.8,0.6-1.8,1.3-2.2l53.4-30.5C167-127,167.5-127.1,168-127.1 L168-127.1z"></path>
+                        <path d="M112-222.5c0.5,0,1,0.1,1.3,0.3l53.4,30.5c0.7,0.4,1.3,1.4,1.3,2.2v61c0,0.8-0.6,1.8-1.3,2.2l-53.4,30.5 c-0.7,0.4-1.9,0.4-2.6,0l-53.4-30.5c-0.7-0.4-1.3-1.4-1.3-2.2v-61c0-0.8,0.6-1.8,1.3-2.2l53.4-30.5 C111-222.4,111.5-222.5,112-222.5L112-222.5z"></path>
+                        <path d="M168-317.8c0.5,0,1,0.1,1.3,0.3l53.4,30.5c0.7,0.4,1.3,1.4,1.3,2.2v61c0,0.8-0.6,1.8-1.3,2.2L169.3-191 c-0.7,0.4-1.9,0.4-2.6,0l-53.4-30.5c-0.7-0.4-1.3-1.4-1.3-2.2v-61c0-0.8,0.6-1.8,1.3-2.2l53.4-30.5 C167-317.7,167.5-317.8,168-317.8L168-317.8z"></path>
+                    </g>
+                </pattern>'''
+            },
+            {
+                'type': 'svg-pattern',
+                'contents': '''<pattern x="0" y="126" patternUnits="userSpaceOnUse" width="126" height="200" viewBox="0 0 10 16">
+                    <g id="cube">
+                        <path fill="orange" d="M0 0l5 3v5l-5 -3z" />
+                        <path fill="lighten(orange, 30%)" d="M10 0l-5 3v5l5 -3" />
+                    </g>
+                    <use x="5" y="8" xlink:href="#cube" />
+                    <use x="-5" y="8" xlink:href="#cube" />
+                </pattern>'''
+            }
+        ]
 
 if __name__ == '__main__':
     application.run(host='0.0.0.0', port=8090, debug=False)
