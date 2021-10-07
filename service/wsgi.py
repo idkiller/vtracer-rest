@@ -1,4 +1,4 @@
-from flask import Flask, request, Response
+from flask import Flask, request, Response, render_template
 from flask_restx import Api, Resource, namespace, reqparse
 from werkzeug.datastructures import FileStorage
 from werkzeug.utils import secure_filename
@@ -7,7 +7,13 @@ from vlib import convert_to_svg
 from tempfile import mkstemp
 import os
 
-from flask_cors import CORS
+from flask_cors import CORS, cross_origin
+
+from pymongo import MongoClient
+
+def DB(name):
+    DB.client = DB.client or MongoClient(os.environ.get('MONGODB_URI', 'localhost'))
+    return DB.client[name]
 
 
 application = Flask(__name__)
@@ -65,6 +71,8 @@ class VisionClass(Resource):
         os.unlink(path)
         return Response(svg, mimetype='image/svg+xml')
 
+ContentsSaveFilter = app.parser()
+ContentsSaveFilter.add_argument('contents', trim=True)
 contents = app.namespace('contents', description='Contents APIs')
 
 @contents.route('/')
@@ -74,7 +82,7 @@ class ContentsClass(Resource):
             {
                 'type': 'svg-pattern',
                 'name': 'pattern1',
-                'contents': '''<pattern x="12.5" y="12.5" width="25" height="25" patternUnits="userSpaceOnUse">
+                'contents': '''<pattern x="12.5" y="12.5" width="25" height="25" patternUnits="userSpaceOnUse" viewBox="0 0 100 100">
                     <circle fill="orange" cx="10" cy="10" r="10" />
                 </pattern>'''
             },
@@ -92,7 +100,7 @@ class ContentsClass(Resource):
             {
                 'type': 'svg-pattern',
                 'name': 'pattern3',
-                'contents': '''<pattern x="0" y="126" patternUnits="userSpaceOnUse" width="126" height="200" viewBox="0 0 10 16">
+                'contents': '''<pattern x="0" y="126" patternUnits="userSpaceOnUse" width="126" height="200" viewBox="0 0 100 160">
                     <g id="cube">
                         <path fill="orange" d="M0 0l5 3v5l-5 -3z" />
                         <path fill="lighten(orange, 30%)" d="M10 0l-5 3v5l5 -3" />
@@ -103,5 +111,21 @@ class ContentsClass(Resource):
             }
         ]
 
+from flask_sockets import Sockets
+
+sockets = Sockets(application)
+
+@sockets.route('/screen')
+def screen_connected_event(ws):
+    print('screen......')
+    while not ws.closed:
+        message = ws.receive()
+        print('connected : ' + str(message))
+        ws.send(message)
+
 if __name__ == '__main__':
-    application.run(host='0.0.0.0', port=8090, debug=False)
+    #application.run(host='0.0.0.0', port=8090, debug=True)
+    from gevent import pywsgi
+    from geventwebsocket.handler import WebSocketHandler
+    server = pywsgi.WSGIServer(('0.0.0.0', 8090), application, handler_class=WebSocketHandler)
+    server.serve_forever()
