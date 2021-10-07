@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            html, body {margin:0; padding:0; border:0; background-color:white;}
+            .contents-wrapper {
+                width: 100%;
+                height: 100%;
+                position: fixed;
+            }
+            .vectorsurface {
+                width: 100%;
+                height: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="contents-wrapper">
+        </div>
+        <script type="text/javascript" src="{{ url_for('static', filename='reconnecting-websocket.min.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='snap.svg-min.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
+    </body>
+</html>
