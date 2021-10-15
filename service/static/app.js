@@ -5,7 +5,7 @@ if (window.location.protocol == "https:") {
     var ws_scheme = "ws://"
 };
 
-var screen = new WebSocket(ws_scheme + location.host + "/register");
+var screen = new ReconnectingWebSocket(ws_scheme + location.host + "/register");
 
 screen.onopen = function() {
     screen.send('1234');
@@ -22,4 +22,5 @@ screen.onmessage = function(msg) {
 }
 screen.onclose = function() {
     console.log('closed');
+    screen = new WebSocket(screen.url);
 }
