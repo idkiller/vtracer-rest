@@ -17,8 +17,7 @@ ws.onmessage = function(msg) {
     contentsWrapper.innerHTML = msg.data;
     let svg = contentsWrapper.firstChild;
     let snap = Snap(svg)
-    snap.attr({width: '100%', height: '100%', preserveAspectRatio: 'none'});
-    document.body.style.backgroundColor = 'black';
+    snap.attr({width: '100%', height: '100%', preserveAspectRatio: 'none', style: 'background-color:black'});
 }
 ws.onclose = function() {
     console.log('closed');
