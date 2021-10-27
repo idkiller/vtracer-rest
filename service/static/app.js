@@ -14,7 +14,12 @@ ws.onopen = function() {
 var contentsWrapper = document.querySelector('.contents-wrapper');
 
 ws.onmessage = function(msg) {
-    contentsWrapper.innerHTML = msg.data;
+    let txt = msg.data;
+    // dirty cache buster start
+    const re = /([^\/]+\.gif)/g
+    txt = txt.replace(re, `$1?dummy=${Math.random()}`)
+    // dirty cache buster end
+    contentsWrapper.innerHTML = txt;
     let svg = contentsWrapper.firstChild;
     let snap = Snap(svg)
     snap.attr({width: '100%', height: '100%', preserveAspectRatio: 'none', style: 'background-color:black'});
