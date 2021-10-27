@@ -242,6 +242,17 @@ class ContentsClass(Resource):
                     </rect>
                 </pattern>
                 '''
+            },
+            {
+                'type': 'svg-pattern',
+                'name': 'pattern15',
+                'contents': '''
+                <pattern width="100%" height="100%"
+                    patternContentUnits="objectBoundingBox"
+                    preserveAspectRatio="none">
+                    <image xlink:href="https://i.ibb.co/SVXjyhb/boasnake.png" width="1" height="1" preserveAspectRatio="xMidYMid meet"/>
+                </pattern>
+                '''
             }
         ]
 
