@@ -250,6 +250,7 @@ class ContentsClass(Resource):
                 <pattern width="100%" height="100%"
                     patternContentUnits="objectBoundingBox"
                     preserveAspectRatio="none">
+                    <rect width="1" height="1" fill="white"/>
                     <image xlink:href="https://i.ibb.co/SVXjyhb/boasnake.png" width="1" height="1" preserveAspectRatio="xMidYMid meet"/>
                 </pattern>
                 '''
