@@ -177,7 +177,7 @@ class ContentsClass(Resource):
                 <pattern width="100%" height="100%"
                     patternContentUnits="objectBoundingBox"
                     preserveAspectRatio="xMidYMid slice">
-                    <image xlink:href="https://i.ibb.co/fkqtCVw/nzb1.gif" x="0" y="0" width="1" height="1" preserveAspectRatio="xMidYMid slice"/>
+                    <image xlink:href="https://i.ibb.co/9NvbvV2/zb1.gif" x="0" y="0" width="1" height="1" preserveAspectRatio="xMidYMid slice"/>
                 </pattern>
                 '''
             },
@@ -188,7 +188,7 @@ class ContentsClass(Resource):
                 <pattern width="100%" height="100%"
                     patternContentUnits="objectBoundingBox"
                     preserveAspectRatio="xMidYMid slice">
-                    <image xlink:href="https://i.ibb.co/sgMZfkt/nzb2.gif" x="0" y="0" width="1" height="1" preserveAspectRatio="xMidYMid slice"/>
+                    <image xlink:href="https://i.ibb.co/ZKDz61C/zb2.gif" x="0" y="0" width="1" height="1" preserveAspectRatio="xMidYMid slice"/>
                 </pattern>
                 '''
             },
