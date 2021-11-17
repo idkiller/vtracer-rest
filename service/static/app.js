@@ -57,14 +57,11 @@ ws.onmessage = function (msg) {
         }
     }
 
-    let box = svg.getBBox()
+    let box = svg.viewBox.baseVal
     canvas.width = box.width
     canvas.height = box.height
     render.options.width = box.width
     render.options.height = box.height
-
-    const rect = svg.getBoundingClientRect()
-    const ratio = { x: box.width / rect.width, y: box.height / rect.height }
 
     // clean previous objects
     globalObjIds.forEach(id => Nolida.removePhysicsGlobalContents(id))

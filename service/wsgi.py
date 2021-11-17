@@ -88,16 +88,16 @@ class ContentsClass(Resource):
                     'type': 'polygon',
                     'options': {
                         'sides': 5,
-                        'radius': {'min': 7, 'max': 15},
+                        'radius': {'min': 3, 'max': 7},
                         'frictionAir': 0.1,
                         'friction': 0.5,
                         'restitution': 0.6
                     },
                     'animation': {
-                        'time': {'min': 150, 'max': 300},
+                        'time': {'min': 100, 'max': 150},
                         'bindings': [
-                            { 'name': 'dead', 'delay': 14000 },
-                            { 'name': 'render.opacity', 'duration': 15000, 'value': { 'from': 1, 'to': 0 }, 'easing': 'linear' }
+                            { 'name': 'dead', 'delay': 25000 },
+                            { 'name': 'render.opacity', 'duration': 25000, 'value': { 'from': 1, 'to': 0 }, 'easing': 'linear' }
                         ]
                     }
                 }
