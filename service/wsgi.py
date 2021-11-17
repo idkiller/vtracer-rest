@@ -7,6 +7,7 @@ from werkzeug.utils import secure_filename
 from vlib import convert_to_svg
 from tempfile import mkstemp
 import os
+import json
 
 from flask_cors import CORS, cross_origin
 
@@ -78,6 +79,30 @@ class ContentsClass(Resource):
     def get(self):
         return [
             {
+                'type': 'physics-world-object',
+                'name': 'physics1',
+                'thumbnail': 'https://club-dosomething.github.io/temp/snowicon.png',
+                'contents': {
+                    'x': {'min': 0, 'max': 1},
+                    'y': 0.02,
+                    'type': 'polygon',
+                    'options': {
+                        'sides': 5,
+                        'radius': {'min': 7, 'max': 15},
+                        'frictionAir': 0.1,
+                        'friction': 0.5,
+                        'restitution': 0.6
+                    },
+                    'animation': {
+                        'time': {'min': 150, 'max': 300},
+                        'bindings': [
+                            { 'name': 'dead', 'delay': 14000 },
+                            { 'name': 'render.opacity', 'duration': 15000, 'value': { 'from': 1, 'to': 0 }, 'easing': 'linear' }
+                        ]
+                    }
+                }
+            },
+            {
                 'type': 'svg-pattern',
                 'name': 'pattern4',
                 'contents': '''<pattern x="0" y="0" width="163.84" height="163.84" patternUnits="userSpaceOnUse">
@@ -127,16 +152,6 @@ class ContentsClass(Resource):
                 <use xlink:href="#stripe-0.7486950831029537" x="0" y="0"></use>
                 <animateTransform attributeName="transform" type="translate" keyTimes="0;1" repeatCount="indefinite" dur="0.5s" values="0 0; 256 0"></animateTransform>
                 </g></g>
-                </pattern>
-                '''
-            },
-            {
-                'type': 'svg-pattern',
-                'name': 'pattern7',
-                'contents': '''
-                <pattern x="0" y="0" width="76.80000000000001" height="76.80000000000001" patternUnits="userSpaceOnUse">
-                <g transform="scale(0.30000000000000004)">
-                <g data-idx="0" data-dup="" dx="-128" dy="-128" style="transform-origin: 0px 0px; animation: 1s linear 0s infinite normal forwards running beat-d0a45ad1-5500-45ac-9636-c2cf05796570;"><g transform="translate(-128,-128)"><polygon fill="#F47E5F" points="192,128 192,0 128,0 128,64 0,64 0,128 64,128 64,256 128,256 128,192 256,192 256,128 " data-fill="c1" style="fill: rgb(133, 162, 182);"></polygon></g></g><g data-idx="0" data-dup="" dx="128" dy="-128" style="transform-origin: 256px 0px; animation: 1s linear 0s infinite normal forwards running beat-d0a45ad1-5500-45ac-9636-c2cf05796570;"><g transform="translate(128,-128)"><polygon fill="#F47E5F" points="192,128 192,0 128,0 128,64 0,64 0,128 64,128 64,256 128,256 128,192 256,192 256,128 " data-fill="c1" style="fill: rgb(133, 162, 182);"></polygon></g></g><g data-idx="0" data-dup="" dx="-128" dy="128" style="transform-origin: 0px 256px; animation: 1s linear 0s infinite normal forwards running beat-d0a45ad1-5500-45ac-9636-c2cf05796570;"><g transform="translate(-128,128)"><polygon fill="#F47E5F" points="192,128 192,0 128,0 128,64 0,64 0,128 64,128 64,256 128,256 128,192 256,192 256,128 " data-fill="c1" style="fill: rgb(133, 162, 182);"></polygon></g></g><g data-idx="0" data-dup="" dx="128" dy="128" style="transform-origin: 256px 256px; animation: 1s linear 0s infinite normal forwards running beat-d0a45ad1-5500-45ac-9636-c2cf05796570;"><g transform="translate(128,128)"><polygon fill="#F47E5F" points="192,128 192,0 128,0 128,64 0,64 0,128 64,128 64,256 128,256 128,192 256,192 256,128 " data-fill="c1" style="fill: rgb(133, 162, 182);"></polygon></g></g></g>
                 </pattern>
                 '''
             },
@@ -396,6 +411,54 @@ class ContentsClass(Resource):
                     preserveAspectRatio="xMidYMid slice">
                     <image xlink:href="https://club-dosomething.github.io/temp/snow01.gif" x="0" y="0" width="1" height="1" preserveAspectRatio="xMidYMid slice"/>
                 </pattern>
+                '''
+            },
+            {
+                'type': 'css-pattern',
+                'name': 'lineanimation1',
+                'contents': '''
+                .lineanimation1 {
+                    filter:blur(5px);
+                    stroke:#ff6700 !important;
+                    stroke-width:15 !important;
+                    stroke-linecap: round;
+                    stroke-miterlimit:10;
+                    stroke-dasharray:1600;
+                    stroke-dashoffset:1600;
+                    animation: lineanimation1_keyframes 3s forwards infinite;
+                    animation-direction:alternate-reverse;
+                }
+
+                @keyframes lineanimation1_keyframes {
+                    to {
+                        stroke-dashoffset: 0;
+                        stroke: #00f9ff;
+                    }
+                }
+                '''
+            },
+            {
+                'type': 'css-pattern',
+                'name': 'lineanimation2',
+                'contents': '''
+                .lineanimation2 {
+                    filter:blur(5px);
+                    stroke:#ff0000 !important;
+                    stroke-width:15 !important;
+                    stroke-linecap: round;
+                    stroke-miterlimit:10;
+                    stroke-dasharray:1600;
+                    stroke-dashoffset:1600;
+                    animation: lineanimation2_keyframes 3s forwards infinite;
+                    animation-direction:alternate-reverse;
+                }
+
+                @keyframes lineanimation2_keyframes {
+                    to {
+                        stroke-dashoffset: 0;
+                        stroke: #edff00;
+                    }
+                }
                 '''
             }
         ]
