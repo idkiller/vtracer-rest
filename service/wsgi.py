@@ -489,6 +489,17 @@ class ContentsClass(Resource):
                 '''
             },
             {
+                'type': 'svg-pattern',
+                'name': 'gif25',
+                'contents': '''
+                <pattern width="100%" height="100%"
+                    patternContentUnits="objectBoundingBox"
+                    preserveAspectRatio="xMidYMid slice">
+                    <image xlink:href="https://club-dosomething.github.io/temp/AdmiredImpressiveJohndory.gif" x="0" y="0" width="1" height="1" preserveAspectRatio="xMidYMid slice"/>
+                </pattern>
+                '''
+            },
+            {
                 'type': 'css-pattern',
                 'name': 'lineanimation1',
                 'contents': '''
