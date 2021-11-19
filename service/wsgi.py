@@ -187,40 +187,6 @@ class ContentsClass(Resource):
             },
             {
                 'type': 'svg-pattern',
-                'name': 'pattern9',
-                'contents': '''
-                <pattern width="100%" height="100%"
-                    patternContentUnits="objectBoundingBox"
-                    preserveAspectRatio="xMidYMid slice">
-                    <image xlink:href="https://club-dosomething.github.io/temp/zb1.gif" x="0" y="0" width="1" height="1" preserveAspectRatio="xMidYMid slice"/>
-                </pattern>
-                '''
-            },
-            {
-                'type': 'svg-pattern',
-                'name': 'pattern10',
-                'contents': '''
-                <pattern width="100%" height="100%"
-                    patternContentUnits="objectBoundingBox"
-                    preserveAspectRatio="xMidYMid slice">
-                    <image xlink:href="https://club-dosomething.github.io/temp/zb2.gif" x="0" y="0" width="1" height="1" preserveAspectRatio="xMidYMid slice"/>
-                </pattern>
-                '''
-            },
-            {
-                'type': 'svg-pattern',
-                'name': 'pattern11',
-                'contents': '''
-                <pattern width="1" height="1" 
-                    patternContentUnits="objectBoundingBox"
-                    preserveAspectRatio="xMidYMid meet">
-                    <rect width="1" height="1" fill="#225d65"/>
-                    <image x="0.6" y="0.3" width="0.2" height="0.2" xlink:href="https://i.ibb.co/RbdNFNw/456-01.png"/>
-                </pattern>
-                '''
-            },
-            {
-                'type': 'svg-pattern',
                 'name': 'pattern12',
                 'contents': '''
                 <pattern width="1" height="1" 
@@ -255,18 +221,6 @@ class ContentsClass(Resource):
                     <rect width="1" height="1">
                     <animate attributeName="fill" values="green;red;greed" dur="3s" repeatCount="indefinite" />
                     </rect>
-                </pattern>
-                '''
-            },
-            {
-                'type': 'svg-pattern',
-                'name': 'pattern15',
-                'contents': '''
-                <pattern width="100%" height="100%"
-                    patternContentUnits="objectBoundingBox"
-                    preserveAspectRatio="none">
-                    <rect width="1" height="1" fill="white"/>
-                    <image xlink:href="https://i.ibb.co/SVXjyhb/boasnake.png" width="1" height="1" preserveAspectRatio="xMidYMid meet"/>
                 </pattern>
                 '''
             },
@@ -371,17 +325,6 @@ class ContentsClass(Resource):
             },
             {
                 'type': 'svg-pattern',
-                'name': 'gif10',
-                'contents': '''
-                <pattern width="100%" height="100%"
-                    patternContentUnits="objectBoundingBox"
-                    preserveAspectRatio="xMidYMid slice">
-                    <image xlink:href="https://club-dosomething.github.io/temp/mountains.gif" x="0" y="0" width="1" height="1" preserveAspectRatio="xMidYMid slice"/>
-                </pattern>
-                '''
-            },
-            {
-                'type': 'svg-pattern',
                 'name': 'gif11',
                 'contents': '''
                 <pattern width="100%" height="100%"
@@ -414,13 +357,78 @@ class ContentsClass(Resource):
                 '''
             },
             {
+                'type': 'svg-pattern',
+                'name': 'gif14',
+                'contents': '''
+                <pattern width="100%" height="100%"
+                    patternContentUnits="objectBoundingBox"
+                    preserveAspectRatio="xMidYMid slice">
+                    <image xlink:href="https://club-dosomething.github.io/temp/yule-log-fireplace.gif" x="0" y="0" width="1" height="1" preserveAspectRatio="xMidYMid slice"/>
+                </pattern>
+                '''
+            },
+            {
+                'type': 'svg-pattern',
+                'name': 'gif15',
+                'contents': '''
+                <pattern width="100%" height="100%"
+                    patternContentUnits="objectBoundingBox"
+                    preserveAspectRatio="xMidYMid slice">
+                    <image xlink:href="https://club-dosomething.github.io/temp/santa-icegif-12.gif" x="0" y="0" width="1" height="1" preserveAspectRatio="xMidYMid slice"/>
+                </pattern>
+                '''
+            },
+            {
+                'type': 'svg-pattern',
+                'name': 'gif16',
+                'contents': '''
+                <pattern width="100%" height="100%"
+                    patternContentUnits="objectBoundingBox"
+                    preserveAspectRatio="xMidYMid slice">
+                    <image xlink:href="https://club-dosomething.github.io/temp/5c677d9ac66cfda7921d02c94a9c8e6f.gif" x="0" y="0" width="1" height="1" preserveAspectRatio="xMidYMid slice"/>
+                </pattern>
+                '''
+            },
+            {
+                'type': 'svg-pattern',
+                'name': 'gif17',
+                'contents': '''
+                <pattern width="100%" height="100%"
+                    patternContentUnits="objectBoundingBox"
+                    preserveAspectRatio="xMidYMid slice">
+                    <image xlink:href="https://club-dosomething.github.io/temp/13039.gif" x="0" y="0" width="1" height="1" preserveAspectRatio="xMidYMid slice"/>
+                </pattern>
+                '''
+            },
+            {
+                'type': 'svg-pattern',
+                'name': 'gif18',
+                'contents': '''
+                <pattern width="100%" height="100%"
+                    patternContentUnits="objectBoundingBox"
+                    preserveAspectRatio="xMidYMid slice">
+                    <image xlink:href="https://club-dosomething.github.io/temp/13045.gif" x="0" y="0" width="1" height="1" preserveAspectRatio="xMidYMid slice"/>
+                </pattern>
+                '''
+            },
+            {
+                'type': 'svg-pattern',
+                'name': 'gif18',
+                'contents': '''
+                <pattern width="100%" height="100%"
+                    patternContentUnits="objectBoundingBox"
+                    preserveAspectRatio="xMidYMid slice">
+                    <image xlink:href="https://club-dosomething.github.io/temp/AffectionateWeeBullfrog-size_restricted.gif" x="0" y="0" width="1" height="1" preserveAspectRatio="xMidYMid slice"/>
+                </pattern>
+                '''
+            },
+            {
                 'type': 'css-pattern',
                 'name': 'lineanimation1',
                 'contents': '''
                 .lineanimation1 {
-                    filter:blur(5px);
                     stroke:#ff6700 !important;
-                    stroke-width:15 !important;
+                    stroke-width:10 !important;
                     stroke-linecap: round;
                     stroke-miterlimit:10;
                     stroke-dasharray:1600;
@@ -442,9 +450,8 @@ class ContentsClass(Resource):
                 'name': 'lineanimation2',
                 'contents': '''
                 .lineanimation2 {
-                    filter:blur(5px);
                     stroke:#ff0000 !important;
-                    stroke-width:15 !important;
+                    stroke-width:10 !important;
                     stroke-linecap: round;
                     stroke-miterlimit:10;
                     stroke-dasharray:1600;
