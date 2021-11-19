@@ -423,6 +423,72 @@ class ContentsClass(Resource):
                 '''
             },
             {
+                'type': 'svg-pattern',
+                'name': 'gif19',
+                'contents': '''
+                <pattern width="100%" height="100%"
+                    patternContentUnits="objectBoundingBox"
+                    preserveAspectRatio="xMidYMid slice">
+                    <image xlink:href="https://club-dosomething.github.io/temp/giphy_1.gif" x="0" y="0" width="1" height="1" preserveAspectRatio="xMidYMid slice"/>
+                </pattern>
+                '''
+            },
+            {
+                'type': 'svg-pattern',
+                'name': 'gif20',
+                'contents': '''
+                <pattern width="100%" height="100%"
+                    patternContentUnits="objectBoundingBox"
+                    preserveAspectRatio="xMidYMid slice">
+                    <image xlink:href="https://club-dosomething.github.io/temp/giphy_2.gif" x="0" y="0" width="1" height="1" preserveAspectRatio="xMidYMid slice"/>
+                </pattern>
+                '''
+            },
+            {
+                'type': 'svg-pattern',
+                'name': 'gif21',
+                'contents': '''
+                <pattern width="100%" height="100%"
+                    patternContentUnits="objectBoundingBox"
+                    preserveAspectRatio="xMidYMid slice">
+                    <image xlink:href="https://club-dosomething.github.io/temp/giphy_11.gif" x="0" y="0" width="1" height="1" preserveAspectRatio="xMidYMid slice"/>
+                </pattern>
+                '''
+            },
+            {
+                'type': 'svg-pattern',
+                'name': 'gif22',
+                'contents': '''
+                <pattern width="100%" height="100%"
+                    patternContentUnits="objectBoundingBox"
+                    preserveAspectRatio="xMidYMid slice">
+                    <image xlink:href="https://club-dosomething.github.io/temp/giphy_4.gif" x="0" y="0" width="1" height="1" preserveAspectRatio="xMidYMid slice"/>
+                </pattern>
+                '''
+            },
+            {
+                'type': 'svg-pattern',
+                'name': 'gif23',
+                'contents': '''
+                <pattern width="100%" height="100%"
+                    patternContentUnits="objectBoundingBox"
+                    preserveAspectRatio="xMidYMid slice">
+                    <image xlink:href="https://club-dosomething.github.io/temp/giphy_5.gif" x="0" y="0" width="1" height="1" preserveAspectRatio="xMidYMid slice"/>
+                </pattern>
+                '''
+            },
+            {
+                'type': 'svg-pattern',
+                'name': 'gif24',
+                'contents': '''
+                <pattern width="100%" height="100%"
+                    patternContentUnits="objectBoundingBox"
+                    preserveAspectRatio="xMidYMid slice">
+                    <image xlink:href="https://club-dosomething.github.io/temp/giphy_9.gif" x="0" y="0" width="1" height="1" preserveAspectRatio="xMidYMid slice"/>
+                </pattern>
+                '''
+            },
+            {
                 'type': 'css-pattern',
                 'name': 'lineanimation1',
                 'contents': '''
