@@ -504,10 +504,11 @@ class ContentsClass(Resource):
                 'name': 'lineanimation1',
                 'contents': '''
                 .lineanimation1 {
-                    stroke:#ff6700 !important;
-                    stroke-width:10 !important;
+                    filter: blur(3px);
+                    stroke:#ff6700;
+                    stroke-width:3;
                     stroke-linecap: round;
-                    stroke-miterlimit:10;
+                    stroke-miterlimit:3;
                     stroke-dasharray:1600;
                     stroke-dashoffset:1600;
                     animation: lineanimation1_keyframes 3s forwards infinite;
@@ -527,10 +528,11 @@ class ContentsClass(Resource):
                 'name': 'lineanimation2',
                 'contents': '''
                 .lineanimation2 {
-                    stroke:#ff0000 !important;
-                    stroke-width:10 !important;
+                    filter: blur(3px);
+                    stroke:#cc231e;
+                    stroke-width:3;
                     stroke-linecap: round;
-                    stroke-miterlimit:10;
+                    stroke-miterlimit:3;
                     stroke-dasharray:1600;
                     stroke-dashoffset:1600;
                     animation: lineanimation2_keyframes 3s forwards infinite;
@@ -541,6 +543,30 @@ class ContentsClass(Resource):
                     to {
                         stroke-dashoffset: 0;
                         stroke: #edff00;
+                    }
+                }
+                '''
+            },
+            {
+                'type': 'css-pattern',
+                'name': 'lineanimation3',
+                'contents': '''
+                .lineanimation3 {
+                    filter: blur(3px);
+                    stroke:#34A65F;
+                    stroke-width:3;
+                    stroke-linecap: round;
+                    stroke-miterlimit:3;
+                    stroke-dasharray:1600;
+                    stroke-dashoffset:1600;
+                    animation: lineanimation2_keyframes 3s forwards infinite;
+                    animation-direction:alternate-reverse;
+                }
+
+                @keyframes lineanimation3_keyframes {
+                    to {
+                        stroke-dashoffset: 0;
+                        stroke: #cc231e;
                     }
                 }
                 '''
