@@ -4,10 +4,8 @@ import redis
 import gevent
 from flask_restx import Namespace, reqparse, Resource
 from flask_sock import Sock
+from ..config import REDIS_URL, REDIS_CHAN
 
-
-REDIS_URL = os.environ.get("REDIS_URL", "redis://localhost:6379")
-REDIS_CHAN = "screen"
 redis = redis.from_url(REDIS_URL)
 
 screen = Namespace('screen', description="Screen APIs")

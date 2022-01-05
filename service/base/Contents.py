@@ -1,21 +1,15 @@
-import os
-from typing_extensions import Required
 from flask_restx import Namespace, Resource, reqparse
-from pymongo import MongoClient
 from bson.objectid import ObjectId
 import json
-
-MONGODB_URL = os.environ.get('MONGODB_URL', 'mongodb://localhost:27017')
-mongo = MongoClient(MONGODB_URL)
-db = mongo['lightwarp-contents']
+from .database import db
 
 contents = Namespace("contents", description="Content related APIs")
 
 parser = reqparse.RequestParser()
-parser.add_argument('type', Required=True)
-parser.add_argument('name', Required=True)
+parser.add_argument('type', required=True)
+parser.add_argument('name', required=True)
 parser.add_argument('thumbnail')
-parser.add_argument('contents', Required=True)
+parser.add_argument('contents', required=True)
 
 @contents.route("/")
 class Contents(Resource):
@@ -42,3 +36,9 @@ class Content(Resource):
     
     def get(self, content_id):
         return db.contents.find_one({'_id': ObjectId(content_id)})
+
+@contents.route('/delete/<string:content_id>')
+class ContentDelete(Resource):
+    def get(self, content_id):
+        result = db.contents.delete_one({'_id': ObjectId(content_id)})
+        return "OK" if result.deleted_count > 0 else "FAIL"
