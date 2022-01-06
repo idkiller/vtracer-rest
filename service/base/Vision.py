@@ -9,7 +9,7 @@ vision = Namespace('vision', description='VTracer APIs')
 
 parser = reqparse.RequestParser()
 parser.add_argument('color_mode', default='color')
-parser.add_argument('hierarchial', default='stacked')
+parser.add_argument('hierarchical', default='stacked')
 parser.add_argument('mode', default='polygon')
 parser.add_argument('filter_speckle', default=4, type=int)
 parser.add_argument('color_precision', default=6, type=int)
@@ -39,7 +39,7 @@ class Vision(Resource):
 
         v = self.vtracer
         v.color_mode = args["color_mode"]
-        v.hierarchical = args["hierarchial"]
+        v.hierarchical = args["hierarchical"]
         v.path_simplify_mode = args["mode"]
         v.filter_speckle = args["filter_speckle"]
         v.color_precision = args["color_precision"]
