@@ -22,6 +22,7 @@ class Screen(Resource):
     def post(self, screen_id):
         args = parser.parse_args()
         data = args['data']
+        print(data)
         redis.set(screen_id, data)
         redis.publish(REDIS_CHAN, str(screen_id))
         return {'result': screen_id}
@@ -60,21 +61,15 @@ class ScreenBackend(object):
     def start(self):
         gevent.spawn(self.run)
 
-def screen_screen_register_event(ws):
-    while not ws.closed:
-        screen_id = ws.receive()
-        if not screen_id or not screen_id.strip():
-            screen_id = str(randint(1000, 9999))
-
-
 sockets = Sock()
 backend = ScreenBackend()
 @sockets.route('/register')
 def screen_register_event(ws):
-    screen_id = ws.receive()
-    if not screen_id or not screen_id.strip():
-        screen_id = str(randint(1000, 9999))
-    backend.register(ws, screen_id)
+    while True:
+        screen_id = ws.receive()
+        if not screen_id or not screen_id.strip():
+            screen_id = str(randint(1000, 9999))
+        backend.register(ws, screen_id)
 
 def initialize(application):
     sockets.init_app(application)
